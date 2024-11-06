@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 import "./Dashboard.css";
+// import cardData from "./Dashboard.json";
 import cardData from "./Dashboard.json"
 
 const Dashboard = () => {
