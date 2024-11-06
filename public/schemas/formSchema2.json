@@ -19,168 +19,88 @@
       ]
     },
     {
-      "title": "A. Data Umum",
-      "stepper": "Data Umum",
+      "title": "F. Upload KTP",
+      "stepper": "Upload KTP",
       "fields": [
         {
-          "name": "fullname",
-          "label": "Nama Lengkap",
-          "type": "text"
-        },
-        {
-          "name": "birth_place",
-          "label": "Tempat Lahir",
-          "type": "text"
-        },
-        {
-          "name": "birth_date",
-          "label": "Tanggal Lahir",
-          "type": "date"
-        },
-        {
-          "name": "gender",
-          "label": "Jenis Kelamin",
-          "type": "radio",
-          "options": [
-            { "value": "Pria", "label": "Pria" },
-            { "value": "Wanita", "label": "Wanita" }
-          ]
-        },
-        {
-          "name": "id_type",
-          "label": "Dokumen Identitas",
-          "type": "select",
-          "options": [
-            { "value": "KTP", "label": "KTP" },
-            { "value": "SIM", "label": "SIM" }
-          ]
-        },
-        {
-          "name": "id_number",
-          "label": "Nomor Identitas",
-          "type": "id_number",
-          "inputMode": "numeric",
-          "pattern": "[0-9]*",
-          "maxLength": 16
-        },
-  
-        {
-          "name": "address",
-          "label": "Alamat KTP",
-          "type": "address"
-        },
-        {
-          "name": "domicili_address",
-          "label": "Alamat Domisili",
-          "type": "address",
-          "disabled": true
-        },
-  
-        {
-          "name": "mother_name",
-          "label": "Nama Gadis Ibu Kandung",
-          "type": "text"
-        },
-        {
-          "name": "home_status",
-          "label": "Status Rumah",
-          "type": "radio",
-          "options": [
-            { "value": "Milik Sendiri", "label": "Milik Sendiri" },
-            { "value": "Kontrak/Sewa", "label": "Kontrak/Sewa" },
-            { "value": "Milik Keluarga", "label": "Milik Keluarga" }
-          ]
-        },
-        {
-          "name": "last_education",
-          "label": "Pendidikan Terakhir",
-          "type": "radio",
-          "options": [
-            { "value": "SD", "label": "SD" },
-            { "value": "SMP", "label": "SMP" },
-            { "value": "SMA", "label": "SMA" },
-            { "value": "Akademi/S1/S2", "label": "Akademi/S1/S2" }
-          ]
-        },
-        {
-          "name": "marital_status",
-          "label": "Status Perkawinan",
-          "type": "radio",
-          "options": [
-            { "value": "Kawin", "label": "Kawin" },
-            { "value": "Belum Kawin", "label": "Belum Kawin" },
-            { "value": "Cerai", "label": "Cerai" }
-          ]
-        },
-        {
-          "name": "nationality",
-          "label": "Kewarganegaraan",
-          "type": "radio",
-          "options": [
-            { "value": "WNI", "label": "WNI" },
-            { "value": "WNA", "label": "WNA" }
-          ]
-        },
-        {
-          "name": "mobile_number",
-          "label": "Nomor HP/WA",
-          "type": "phone_number",
-          "inputMode": "numeric"
-        },
-        {
-          "name": "religion",
-          "label": "Agama",
-          "type": "select",
-          "options": [
-            { "value": "", "label": "Pilih Agama" },
-            { "value": "Islam", "label": "Islam" },
-            { "value": "Kristen", "label": "Kristen" },
-            { "value": "Katolik", "label": "Katolik" },
-            { "value": "Hindu", "label": "Hindu" },
-            { "value": "Buddha", "label": "Buddha" },
-            { "value": "Konghucu", "label": "Konghucu" }
-          ]
-        },
-        {
-          "name": "email",
-          "label": "Email",
-          "type": "email"
+          "type": "file",
+          "name": "id_photo_url",
+          "label": "Upload KTP",
+          "required": true,
+          "helpText": "Please upload a valid KTP image.",
+          "error": "id_photo_url",
+          "style": "block w-full text-sm text-gray-500 border border-gray-300 rounded-lg cursor-pointer bg-gray-50"
         }
       ]
     },
-  
     {
-      "title": "B. Data Pekerjaan",
-      "stepper": "Data Pekerjaan",
+      "title": "G. Selfie",
+      "stepper": "Selfie KTP",
       "fields": [
         {
-          "name": "occupation",
-          "label": "Bidang Pekerjaan",
-          "type": "text"
+          "type": "camera",
+          "name": "selfie_photo_url",
+          "label": "Selfie",
+          "required": true,
+          "helpText": "Capture a selfie while holding your KTP.",
+          "error": "selfie_photo_url",
+          "style": "w-full h-auto border border-gray-300 rounded-lg"
+        }
+      ],
+      "buttons": [
+        {
+          "type": "button",
+          "label": "Open Camera",
+          "action": "startCamera",
+          "style": "py-2 px-4 text-white bg-orange-500 hover:bg-orange-600 focus:ring-4 focus:outline-none focus:ring-orange-300 font-medium rounded-lg text-sm"
         },
         {
-          "name": "employement_period",
-          "label": "Lama Bekerja (Bulan)",
-          "type": "employement_period",
-          "inputMode": "numeric",
-          "validation": {
-            "pattern": "^[0-9]*$"
-          }
+          "type": "button",
+          "label": "Capture Selfie",
+          "action": "captureSelfie",
+          "style": "py-2 px-4 text-white bg-orange-500 hover:bg-orange-600 focus:ring-4 focus:outline-none focus:ring-orange-300 font-medium rounded-lg text-sm"
         },
         {
-          "name": "office_name",
-          "label": "Nama Kantor",
-          "type": "text"
+          "type": "button",
+          "label": "Stop Camera",
+          "action": "stopCamera",
+          "style": "py-2 px-4 text-white bg-red-500 hover:bg-red-600 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm",
+          "conditional": "cameraStream"
+        }
+      ],
+      "media": [
+        {
+          "type": "video",
+          "ref": "videoRef",
+          "style": "w-full h-auto border border-gray-300 rounded-lg",
+          "conditional": "cameraStream"
         },
         {
-          "name": "job_title",
-          "label": "Pangkat/Jabatan",
-          "type": "text"
+          "type": "canvas",
+          "ref": "canvasRef",
+          "style": "display: none"
         },
         {
-          "name": "office_address",
-          "label": "Alamat Kantor",
-          "type": "text"
+          "type": "image",
+          "src": "selfie",
+          "alt": "Selfie",
+          "style": "w-full h-auto mt-4 border border-gray-300 rounded-lg",
+          "conditional": "selfie"
+        }
+      ]
+    },
+    {
+      "title": "H. Tanda Tangan",
+      "stepper": "Tanda Tangan",
+      "fields": [
+        {
+          "type": "signature",
+          "name": "signature_url",
+          "label": "Tanda Tangan",
+          "required": true,
+          "helpText": "Please sign above.",
+          "error": "signature_url",
+          "style": "border border-gray-300 rounded-lg p-2 h-24 w-full bg-gray-50 mb-2"
         }
       ]
     }
